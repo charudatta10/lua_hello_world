@@ -1,0 +1,24 @@
+name: run main.lua
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+
+      - name: checkout branch
+        uses: actions/checkout@v2
+
+      - name: setup lua
+        uses: qeffects/gh-actions-lua@v8.0.1
+
+      - name: run code
+        run: lua main.lua
+
+
+
